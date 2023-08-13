@@ -31,7 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Image(image: AssetImage("assets/images/stopwatch.jpg")),
+                Image(
+                  image: AssetImage("assets/images/stopwatch.jpg"),
+                  height: 200,
+                ),
+                SizedBox(
+                  height: 50,
+                ),
                 Text(
                   "STOPWATCH",
                   style: TextStyle(
@@ -40,11 +46,11 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 SpinKitPouringHourGlassRefined(
                   color: AppColors.bgTopColor,
-                  size: 120,
+                  size: 60,
                 ),
               ])),
     ));

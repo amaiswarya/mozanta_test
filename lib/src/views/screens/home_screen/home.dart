@@ -18,41 +18,44 @@ class Home extends StatelessWidget {
 
   Scaffold bodyWidget() {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: Stack(children: [
         _backgroundGradient(),
         Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                StringConstants.hintText,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 35,
-                    color: AppColors.whiteColor,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 100),
-              Form(
-                key: formkey,
-                child: CustomFormField(
-                  hintText: StringConstants.hintText,
-                  controller: nameController,
-                  errMsg: StringConstants.errorMsg,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 100),
+                const Text(
+                  StringConstants.hintText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 35,
+                      color: AppColors.whiteColor,
+                      fontWeight: FontWeight.bold),
                 ),
-              ),
-              const SizedBox(height: 100),
-              ButtonWidget(
-                buttonName: "Continue",
-                onpressed: () async {
-                  if (formkey.currentState!.validate()) {
-                    Get.to(const StopWatchScreen());
-                  }
-                },
-              )
-            ],
+                const SizedBox(height: 100),
+                Form(
+                  key: formkey,
+                  child: CustomFormField(
+                    hintText: StringConstants.hintText,
+                    controller: nameController,
+                    errMsg: StringConstants.errorMsg,
+                  ),
+                ),
+                const SizedBox(height: 100),
+                ButtonWidget(
+                  buttonName: "Continue",
+                  onpressed: () async {
+                    if (formkey.currentState!.validate()) {
+                      Get.to(const StopWatchScreen());
+                    }
+                  },
+                )
+              ],
+            ),
           ),
         ),
       ]),
