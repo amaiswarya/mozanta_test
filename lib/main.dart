@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mozanta_test/src/constants/string_constants.dart';
 import 'package:mozanta_test/src/utils/app_config.dart';
-import 'package:mozanta_test/src/views/screens/splash_screen.dart';
+import 'package:mozanta_test/src/views/screens/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
   await onInit();
